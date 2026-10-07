@@ -4,3 +4,7 @@ lisa-design:
 - Config file is .goreleaser.yaml (spec), not gooci's misspelled .gorelreaser.yml; archives use goreleaser v2 `formats:` list.
 - Builds linux+darwin x amd64+arm64, CGO disabled, mirroring gooci's goos set.
 - No GitHub workflows in this PR (release workflow is a later task).
+
+lisa-selfreview:
+pass 1 (strict): 1 finding
+- [nit CORE-STYLE-001] cmd/mock-gooci/main_test.go: case "local build is dev" is misleading; a local `go build` in a git checkout stamps a VCS pseudo-version (v0.0.0-<date>-<sha>), only `go run`/no-VCS builds yield "(devel)" -> "dev". Fix: rename case, note pseudo-version in the resolveVersion doc comment.
