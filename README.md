@@ -11,3 +11,15 @@ goreleaser build --snapshot --clean          # linux + darwin binaries in dist/
 go install github.com/compliance-framework/mock-gooci/cmd/mock-gooci@<ver>
 mock-gooci                                   # prints "mock-gooci <ver>"
 ```
+
+## Releasing
+
+Releases use the shared [compliance-framework/workflows](https://github.com/compliance-framework/workflows)
+release flow (`release-please.yml`, `release-go-lib.yml`, `release-checks.yml`):
+
+1. Merge conventional-commit PRs to `main`; `release-please` opens or updates the release PR
+   (`release-please--branches--main`), versioned from `.release-please-manifest.json`
+   (the first release is `v0.1.0`).
+2. Merging the release PR tags `vX.Y.Z` and publishes the GitHub release.
+3. `release` (on `release: published`) runs goreleaser on the tag and attaches the archives
+   to that release (`.goreleaser.yaml` keeps `release.prerelease: auto`).
