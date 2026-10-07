@@ -1,2 +1,5 @@
 lisa-addressed:
 - CORE-DOC-001 (c318bf89d9df): added a Releasing section to README.md.
+
+lisa-selfreview:
+pass 2: no findings; approve.
