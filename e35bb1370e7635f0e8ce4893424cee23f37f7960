@@ -1,0 +1,6 @@
+lisa-design:
+- release-please-config.json copies every key of workflows@main release-please/defaults.json verbatim (byte-identical formatting) so the workflow's drift check prints no warning; only `packages` is added.
+- Manifest starts at "0.0.0"; with initial-version 0.1.0 the first release PR proposes v0.1.0 (not 1.0.0, which version-guard would block).
+- All new callers pin compliance-framework/workflows@main (trial, matching the existing ci.yml) until v1 is tagged; permissions/secrets follow the workflows README examples (release-please: contents read + inherit; release: contents write + packages write + inherit; release-checks: contents read, no secrets).
+- ci.yml listens for labeled/unlabeled so release-checks re-runs when `release:major-approved` is added; notify needs both ci and release-checks.
+- .goreleaser.yaml gets release.prerelease: auto (release-go-lib.yml refuses otherwise) and replace_existing_artifacts: true; release.mode left at default keep-existing so release-please's notes stand.
