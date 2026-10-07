@@ -11,7 +11,8 @@ import (
 var version = ""
 
 // resolveVersion prefers the ldflags value, then the module version recorded
-// by `go install ...@<ver>`, and falls back to "dev".
+// in the build info (the tag for `go install ...@<ver>`, a VCS pseudo-version
+// for a local `go build`), and falls back to "dev" (e.g. `go run`).
 func resolveVersion(ldflags string, info *debug.BuildInfo, ok bool) string {
 	if ldflags != "" {
 		return ldflags
