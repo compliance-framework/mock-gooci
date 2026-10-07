@@ -1,10 +1,11 @@
 # Trial adoption of the shared go-lib CI, tracking compliance-framework/workflows@main
-# until v1 is tagged. The status check to require is `ci / required`.
+# until v1 is tagged. The status checks to require are `ci / required` and
+# `release-checks / release-checks` (skipped, so passing, on non-release PRs).
 name: ci
 
 on:
   pull_request:
-    types: [opened, edited, synchronize, reopened]
+    types: [opened, edited, synchronize, reopened, labeled, unlabeled]
   push:
     branches: [main]
 
@@ -20,8 +21,13 @@ jobs:
       security-events: write
     secrets: inherit
 
+  release-checks:
+    uses: compliance-framework/workflows/.github/workflows/release-checks.yml@main
+    permissions:
+      contents: read
+
   notify:
-    needs: [ci]
+    needs: [ci, release-checks]
     if: failure()
     uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@main
     with:

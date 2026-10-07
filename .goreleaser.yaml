@@ -36,3 +36,10 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+
+# release-please creates the GitHub release; release-go-lib.yml then runs goreleaser to attach
+# the archives. prerelease: auto keeps a vX.Y.Z-rcN tag a pre-release (the workflow refuses
+# anything else); replace_existing_artifacts lets a re-run overwrite a partial upload.
+release:
+  prerelease: auto
+  replace_existing_artifacts: true
