@@ -1,6 +1,0 @@
-lisa-design:
-- Stdlib only, no cobra: keeps go.sum empty so `go install ...@<ver>` from mock plugin workflows is fast and has no dependency drift for ccf-bump to trip over.
-- CLI version resolution order: goreleaser ldflags (-X main.version) > module version from debug.ReadBuildInfo (set by `go install ...@<ver>`) > "dev". The go install path is what the mock plugins exercise, so it must report the pinned tag.
-- Config file is .goreleaser.yaml (spec), not gooci's misspelled .gorelreaser.yml; archives use goreleaser v2 `formats:` list.
-- Builds linux+darwin x amd64+arm64, CGO disabled, mirroring gooci's goos set.
-- No GitHub workflows in this PR (release workflow is a later task).
