@@ -1,0 +1,2 @@
+lisa-addressed:
+- pass 1 nit: renamed misleading "local build is dev" test case; documented VCS pseudo-version for local go build in resolveVersion comment.
