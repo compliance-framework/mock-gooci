@@ -1,0 +1,20 @@
+# Opens/updates the release PR and, once it merges, tags and publishes the release, via the
+# shared compliance-framework/workflows release-please.yml (tracking @main until v1 is tagged).
+name: release-please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-please
+
+jobs:
+  release-please:
+    uses: compliance-framework/workflows/.github/workflows/release-please.yml@main
+    permissions:
+      contents: read
+    secrets: inherit
