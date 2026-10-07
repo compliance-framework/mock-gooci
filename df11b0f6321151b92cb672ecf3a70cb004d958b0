@@ -1,0 +1,4 @@
+lisa-design:
+- Shared workflows pinned to full SHA 87edd2b700d6dc6de8d49c1f44e525dd39e4db31 (trial of workflows#7), not @v1; notify gets workflows-ref equal to that SHA because a reusable workflow cannot see its own call ref.
+- Top-level permissions: {}; each calling job grants exactly what the shared README documents (ci: actions/contents/pull-requests read + security-events write; notify: actions/contents read).
+- ci-go-lib.yml called with default inputs (no with:), per the trial spec.
