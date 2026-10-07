@@ -1,0 +1,2 @@
+lisa-selfreview:
+Self-review pass 1: approve, no findings. Repinned ci-go-lib.yml, notify-failure.yml uses: and workflows-ref: from orphaned 87edd2b to branch ra/w1-s1-t05b-repo-settings-workflow; ci-go-lib at the tip has no required inputs. Also updated the header comment that named the old 87edd2b pin, since it would otherwise be wrong.
