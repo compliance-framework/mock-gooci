@@ -1,0 +1,3 @@
+lisa-design:
+- Added `closed` to the existing pull_request types list instead of a separate on.pull_request_target or workflow: notify-failure.yml (workflows v1.3.0) only sees a close via the caller's ci.yml pull_request event.
+- The shared CI skips every job on a closed PR (ci / required skipped too), so the extra run is near-empty; no other jobs or pins changed by design (task W1-S3-MOCK-CLOSED).
