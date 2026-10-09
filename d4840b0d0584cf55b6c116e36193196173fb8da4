@@ -1,3 +1,6 @@
 lisa-design:
 - Docs-only (docs: prefix) so neither PR of the stack triggers a release-please bump.
 - PR 1 adds a single sentence right under the repo description; PR 2 adds its sentence directly below it, so the two diffs stack cleanly.
+
+lisa-selfreview:
+- pass 1 (strict): approve, no findings. README-only diff; ccf-review packs core,go checked (CORE-DOC/SCOPE/STYLE not triggered); go build, go test and gofmt pass.
