@@ -1,0 +1,2 @@
+lisa-selfreview:
+- pass 1 (strict): approve, no findings. README-only diff; ccf-review packs core,go checked (CORE-DOC/SCOPE/STYLE not triggered); go build, go test and gofmt pass.
