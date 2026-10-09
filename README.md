@@ -2,6 +2,8 @@
 
 Mock repo for developing CCF release automation. Not a product.
 
+It is also the test mock for merging a gh-stack of PRs under strict `ccf-review` approval rules.
+
 A miniature of [gooci](https://github.com/compliance-framework/gooci): a Go library
 (`pkg/oci`) plus a CLI (`cmd/mock-gooci`) released with goreleaser.
 
