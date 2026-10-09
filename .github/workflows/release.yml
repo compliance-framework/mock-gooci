@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   release:
-    uses: compliance-framework/workflows/.github/workflows/release-go-lib.yml@ec58cea2c02f12b5dad6b23a7bfdc84360f59f11 # v1.3.0
+    uses: compliance-framework/workflows/.github/workflows/release-go-lib.yml@21aaac7c174aaf90abafecf1c90c30b238367d3d # v1.3.1
     permissions:
       contents: write
       packages: write
